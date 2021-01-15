@@ -1,0 +1,86 @@
+{% assign query_size = 5 %}
+{% if Request.Form.size.first != null %}
+  {% assign query_size = Request.Form.size.first | at_least: 5 %}
+{% endif %}
+{% if Request.Query.size.first != null %}
+  {% assign query_size = Request.Query.size.first | at_least: 5 %}
+{% endif %}
+
+{% assign query_type = "News" %}
+{% if Request.Query.type.first != null %}
+  {% assign query_type = Request.Query.type.first %}
+{% endif %}
+
+{% assign query_page = 1 %}
+{% if Request.Form.page.first != null %}
+  {% assign query_page = Request.Form.page.first | at_least: 1 %}
+{% endif %}
+{% if Request.Query.page.first != null %}
+  {% assign query_page = Request.Query.page.first | at_least: 1 %}
+{% endif %}
+
+{% assign query_from = query_page | minus: 1 | times: 5 %}
+{% assign query_size = query_size | plus:1 %}
+
+{% assign Items = Queries.GetContentItemsByTypeFromTo | query: ContentType: query_type , size: query_size, from: query_from %}
+
+{% if Items.size == query_size %}
+    {% assign boolNextPage = true %}
+{% else %}
+    {% assign boolNextPage = false %}
+{% endif %}
+
+<div class="container">
+{% assign query_size = query_size | minus:1 %}
+{% for item in Items %}
+    {% if forloop.index < query_size %}
+        {% assign jsonObj = item.Content | jsonparse %}
+	    <div class="col-md-10 animate-box">
+	      <div class="blog-entry">
+	        <a href="{{jsonObj.AutoroutePart.Path}}" class="thumb">
+                {% if query_type == "Announcement" %}
+                    {{ jsonObj.Announcement.Image.Paths.first | asset_url | img_tag: class:'img-responsive'}}
+                {% else %}
+                    {{ jsonObj.News.Image.Paths.first | asset_url | img_tag: class:'img-responsive'}}
+                {% endif %}
+	        </a>
+	        <div class="desc">
+	          <h3>
+	            <a href="{{jsonObj.AutoroutePart.Path}}">{{jsonObj.TitlePart.Title}}</a>
+	          </h3>
+	          <p class="meta">
+	            <span>{{jsonObj.PublishedUtc | date: "%Y-%m-%d"}}</span>
+	          </p>
+	          <div class="show-2-line">{{jsonObj.MarkdownBodyPart.Markdown | markdownify | raw }}</div>
+	        </div>
+	      </div>
+	    </div>
+    {% endif %}
+{% endfor %}
+</div>
+
+
+<!--Begin pager-->
+<nav class="mt-5" style="margin-left:180px">
+    <ul class="pagination justify-content-center">
+        {% if query_page == 1 %}
+        <li class="page-item disabled">
+            <span class="page-link">Previous</span>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link" href="?&type={{ query_type }}&page={{ query_page | minus: 1 }}&size={{ query_size }}" tabindex="-1">{{ "Previous" | t }}</a>
+        {% endif %}
+        </li>
+        {% if boolNextPage %}
+        <li class="page-item">
+            <a class="page-link" href="?&type={{ query_type }}&page={{ query_page | plus: 1 }}&size={{ query_size }}">{{ "Next" | t }}</a>
+        {% else %}
+        <li class="page-item disabled">
+            <span class="page-link">Next</span>
+        {% endif %}
+        </li>
+    </ul>
+</nav>
+
+
+<!--End pager-->

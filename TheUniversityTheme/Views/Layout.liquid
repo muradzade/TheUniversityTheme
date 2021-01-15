@@ -1,0 +1,145 @@
+﻿<!DOCTYPE HTML>
+<html lang="{{ Culture.Name }}">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{ "PageTitle" | shape_new | shape_stringify }}</title>
+	{% resources type: "Meta" %}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	{% style src:"~/TheUniversityTheme/css/animate.css", debug_src:"~/TheUniversityTheme/css/animate.css" %}
+	<!-- Icomoon Icon Fonts-->
+	{% style src:"~/TheUniversityTheme/css/icomoon.css", debug_src:"~/TheUniversityTheme/css/icomoon.css" %}
+	<!-- Bootstrap  -->
+	{% style src:"~/TheUniversityTheme/css/bootstrap.css", debug_src:"~/TheUniversityTheme/css/bootstrap.css" %}
+
+	<!-- Magnific Popup -->
+	{% style src:"~/TheUniversityTheme/css/magnific-popup.css", debug_src:"~/TheUniversityTheme/css/magnific-popup.css" %}
+
+	<!-- Owl Carousel  -->
+	{% style src:"~/TheUniversityTheme/css/owl.carousel.min.css", debug_src:"~/TheUniversityTheme/css/owl.carousel.min.css" %}
+	{% style src:"~/TheUniversityTheme/css/owl.theme.default.min.css", debug_src:"~/TheUniversityTheme/css/owl.theme.default.min.css" %}
+	<!-- Flexslider  -->
+	{% style src:"~/TheUniversityTheme/css/flexslider.css", debug_src:"~/TheUniversityTheme/css/flexslider.css" %}
+	
+	<!-- Flaticons  -->
+	{% style src:"~/TheUniversityTheme/fonts/flaticon/font/flaticon.css", debug_src:"~/TheUniversityTheme/fonts/flaticon/font/flaticon.css" %}
+
+	<!-- Theme style  -->
+	{% style src:"~/TheUniversityTheme/css/style.css", debug_src:"~/TheUniversityTheme/css/style.css" %}
+
+	<!-- Modernizr JS -->
+	{% script src:"~/TheUniversityTheme/js/modernizr-2.6.2.min.js", debug_src:"~/TheUniversityTheme/js/modernizr-2.6.2.min.js"  %}
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	{% script src:"~/TheUniversityTheme/js/respond.min.js", debug_src:"~/TheUniversityTheme/js/respond.min.js"  %}
+	<![endif]-->
+
+	{% resources type: "HeadScript" %}
+    {% resources type: "HeadLink" %}
+    {% resources type: "Stylesheet" %}
+    {% render_section "HeadMeta", required: false %}
+
+	</head>
+	<body>
+	<div class="colorlib-loader"></div>
+	<div id="page">
+	<nav class="colorlib-nav" role="navigation">
+		<div class="top-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2">
+						<div id="colorlib-logo"><a href="#"> {{ Site.SiteName }} </a></div>
+					</div>
+					<div class="col-md-10 text-right menu-1">
+						{% shape "menu", alias: "alias:main-menu", cache_id: "main-menu", cache_tag: "alias:main-menu" %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	</div>
+
+	<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+				{% render_section "Messages", required: false %}
+                
+            </div>
+        </div>
+    </div>
+
+	{% render_section "Content" %}
+
+    <footer id="colorlib-footer" role="contentinfo">
+		<div class="container">
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; All Rights Reserved.</small> 
+					</p>
+					<p>
+						<ul class="colorlib-social-icons">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
+	<!-- jQuery -->
+	{% script src:"~/TheUniversityTheme/js/jquery.min.js", debug_src:"~/TheUniversityTheme/js/jquery.min.js"  %}
+	<!-- jQuery Easing -->
+	{% script src:"~/TheUniversityTheme/js/jquery.easing.1.3.js", debug_src:"~/TheUniversityTheme/js/jquery.easing.1.3.js"  %}
+	<!-- Bootstrap -->
+	{% script src:"~/TheUniversityTheme/js/bootstrap.min.js", debug_src:"~/TheUniversityTheme/js/bootstrap.min.js"  %}
+	<!-- Waypoints -->
+	{% script src:"~/TheUniversityTheme/js/jquery.waypoints.min.js", debug_src:"~/TheUniversityTheme/js/jquery.waypoints.min.js"  %}
+	<!-- Stellar Parallax -->
+	{% script src:"~/TheUniversityTheme/js/jquery.stellar.min.js", debug_src:"~/TheUniversityTheme/js/jquery.stellar.min.js"  %}
+	<!-- Carousel -->
+	{% script src:"~/TheUniversityTheme/js/owl.carousel.min.js", debug_src:"~/TheUniversityTheme/js/owl.carousel.min.js"  %}
+	<!-- Flexslider -->
+	{% script src:"~/TheUniversityTheme/js/jquery.flexslider-min.js", debug_src:"~/TheUniversityTheme/js/jquery.flexslider-min.js" %}
+	<!-- countTo -->
+	{% script src:"~/TheUniversityTheme/js/jquery.countTo.js", debug_src:"~/TheUniversityTheme/js/jquery.countTo.js"  %}
+	<!-- Magnific Popup -->
+	{% script src:"~/TheUniversityTheme/js/jquery.magnific-popup.min.js", debug_src:"~/TheUniversityTheme/js/jquery.magnific-popup.min.js"  %}
+	{% script src:"~/TheUniversityTheme/js/magnific-popup-options.js", debug_src:"~/TheUniversityTheme/js/magnific-popup-options.js"  %}
+	<!-- Main -->
+	{% script src:"~/TheUniversityTheme/js/main.js", debug_src:"~/TheUniversityTheme/js/main.js"  %}
+
+	{% resources type: "FootScript" %}
+
+	</body>
+</html>
+
+
+

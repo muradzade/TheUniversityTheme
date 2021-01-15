@@ -1,0 +1,124 @@
+﻿<aside id="colorlib-hero"  class="js-fullheight" >
+		<div class="flexslider js-fullheight ">
+			<ul class="slides">
+        {% assign items = Queries.GetItemsForSlider | query %}
+        {% for item in items %}
+        {% assign jsonObj = item.Content | jsonparse %}
+        {% if jsonObj.ContentType == "Announcement" %}
+					{% assign contentFields = jsonObj.Announcement %}
+        {% else %}
+					{% assign contentFields = jsonObj.News %}
+        {% endif %}
+
+        <li style="background-image: url({{ contentFields.Image.Paths.first | asset_url }});">
+          <div class="overlay-gradient"></div>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
+                <div class="slider-text-inner">
+                  <h1>{{jsonObj.TitlePart.Title}}</h1>
+                  <p>
+                    <a class="btn btn-primary btn-lg" href="{{jsonObj.AutoroutePart.Path}}">Daha fazla</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endfor %}   	
+		  </ul>
+	  </div>
+</aside>
+
+{% if Model.ContentItem.Content.HomePage.StudentCount.Value > 0 %}
+<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(MyTheme/images/img_bg_3.jpg); margin-top: 15px;" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 text-center animate-box">
+					<span class="icon"><i class="flaticon-lawyer-1"></i></span><i class="fas fa-car-side"></i>
+					<span class="colorlib-counter js-counter" data-from="0" data-to="{{Model.ContentItem.Content.HomePage.StudentCount.Value}}" data-speed="5000" data-refresh-interval="50"></span>
+					<span class="colorlib-counter-label">Öğrenci</span>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<span class="icon"><i class="flaticon-courthouse"></i></span>
+					<span class="colorlib-counter js-counter" data-from="0" data-to="{{Model.ContentItem.Content.HomePage.FacultyCount.Value}}" data-speed="5000" data-refresh-interval="50"></span>
+					<span class="colorlib-counter-label">Bölüm</span>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<span class="icon"><i class="flaticon-jury"></i></span>
+					<span class="colorlib-counter js-counter" data-from="0" data-to="{{Model.ContentItem.Content.HomePage.PersonalCount.Value}}" data-speed="5000" data-refresh-interval="50"></span>
+					<span class="colorlib-counter-label">Personel</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endif %}
+
+	<div id="colorlib-blog">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+
+					<h3>Duyurular</h3>
+					<div class="row">
+            {% assign Announcements = Queries.GetContentItemsByTypeFromTo | query: ContentType:"Announcement" , size: 3, from: 0 %}
+            {% for announcement in Announcements %}
+            {% assign jsonObj = announcement.Content | jsonparse %}
+            <div class="col-md-12 animate-box">
+                  <div class="blog-entry">
+										<a href="{{jsonObj.AutoroutePart.Path}}" class="thumb">
+                      {{ jsonObj.Announcement.Image.Paths.first | asset_url | img_tag: class:'img-responsive'}}
+                    </a>
+										<div class="desc">
+											<h3><a href="{{jsonObj.AutoroutePart.Path}}">{{jsonObj.TitlePart.Title}}</a></h3>							
+                      <p class="meta"><span>{{jsonObj.PublishedUtc | date: "%Y-%m-%d"}}</span></p>
+                      <div class="show-2-line">{{jsonObj.MarkdownBodyPart.Markdown | markdownify | raw }}</div>
+										</div>
+									</div>
+								</div>
+            {% endfor %}
+            <div style="margin-left:20px">
+              <a href="viewall?&type=Announcement">
+                <h4>Tum duyurular</h4>
+              </a>
+            </div>
+          </div>
+				</div>
+				<div class="col-md-6">  
+          
+          <h3>Haberler</h3>           
+					<div class="row">
+            {% assign News = Queries.GetContentItemsByTypeFromTo | query: ContentType:"News" , size: 3, from: 0 %}
+            {% for news in News %}
+            {% assign jsonObj = news.Content | jsonparse %}
+            <div class="col-md-12 animate-box">
+							  <div class="blog-entry">
+							    <a href="{{jsonObj.AutoroutePart.Path}}" class="thumb">
+                    {{ jsonObj.News.Image.Paths.first | asset_url | img_tag: class:'img-responsive'}}
+                  </a>
+							    <div class="desc">
+							      <h3>
+							        <a href="{{jsonObj.AutoroutePart.Path}}">{{jsonObj.TitlePart.Title}}</a>
+							      </h3>
+							      <p class="meta">
+							        <span>{{jsonObj.PublishedUtc | date: "%Y-%m-%d"}}</span>
+							      </p>
+							      <div class="show-2-line">{{jsonObj.MarkdownBodyPart.Markdown | markdownify | raw }}</div>
+							    </div>
+							  </div>
+							</div>
+            {% endfor %}
+							<div style="margin-left:20px">
+								<a href="viewall?&type=News">
+									<h4>Tum Haberler</h4>
+								</a>                
+              </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	

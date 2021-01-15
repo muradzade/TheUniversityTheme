@@ -1,0 +1,1420 @@
+{
+  "name": "University Recipe",
+  "displayName": "University Recipe",
+  "description": "Provide to make pages for university",
+  "author": "MRD",
+  "website": "https://github.com/muradzade",
+  "version": "1.0",
+  "issetuprecipe": true,
+  "categories": [ "default" ],
+  "tags": [ "university" ],
+  "variables": {
+    "landingContentItemId": "[js:uuid()]"
+    // "now": "[js: new Date().toISOString()]"
+  },
+
+
+  "steps": [
+    {
+      "name": "Feature",
+      "disable": [],
+      "enable": [
+        "OrchardCore.Settings",
+        "OrchardCore.Admin",
+        "OrchardCore.Contents",
+        "OrchardCore.ShortCodes",
+        "OrchardCore.Liquid",
+        "OrchardCore.Templates",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.Alias",
+        "OrchardCore.Autoroute",
+        "OrchardCore.ContentFields",
+        "OrchardCore.ContentPreview",
+        "OrchardCore.Contents.FileContentDefinition",
+        "OrchardCore.CustomSettings",
+        "OrchardCore.Deployment",
+        "OrchardCore.Deployment.Remote",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.DynamicCache",
+        "OrchardCore.Resources",
+        "OrchardCore.Widgets",
+        "OrchardCore.Features",
+        "OrchardCore.Feeds",
+        "OrchardCore.Flows",
+        "OrchardCore.HomeRoute",
+        "OrchardCore.Html",
+        "OrchardCore.Indexing",
+        "OrchardCore.Scripting",
+        "OrchardCore.Layers",
+        "OrchardCore.Lists",
+        "OrchardCore.Markdown",
+        "OrchardCore.Media",
+        "OrchardCore.Title",
+        "OrchardCore.Menu",
+        "OrchardCore.Navigation",
+        "OrchardCore.Queries",
+        "OrchardCore.Queries.Sql",
+        "OrchardCore.Users",
+        "OrchardCore.Recipes",
+        "OrchardCore.Roles",
+        "OrchardCore.Tenants",
+        "OrchardCore.Themes",
+        "TheUniversityTheme",
+        "TheAdmin",
+        "SafeMode"
+      ]
+    },
+    {
+      "name": "themes",
+      "admin": "TheAdmin",
+      "site": "TheUniversityTheme"
+    },
+    {
+      "name": "settings",
+      "HomeRoute": {
+        "Action": "Display",
+        "Controller": "Item",
+        "Area": "OrchardCore.Contents",
+        "ContentItemId": "[js: variables('landingContentItemId')]"
+      },
+      "LayerSettings": {
+        "Zones": [ "Footer" ]
+      }
+    },
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "43eh41fcn5a2p04nsmhnx762dq",
+          "ContentItemVersionId": "492pd04ea6nc2sdnkv358de5mt",
+          "ContentType": "HomePage",
+          "DisplayText": "Home Page",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2020-12-26T16:45:35.3503539Z",
+          "PublishedUtc": "2020-12-26T16:45:35.4148304Z",
+          "CreatedUtc": "2020-12-25T20:43:15.3995914Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "HomePage": {
+            "StudentCount": {
+              "Value": 0
+            },
+            "PersonalCount": {
+              "Value": 0
+            },
+            "FacultyCount": {
+              "Value": 0
+            }
+          },
+          "AutoroutePart": {
+            "Path": "/home",
+            "SetHomepage": true,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "TitlePart": {
+            "Title": "Home Page"
+          },
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          }
+        },
+        {
+          "ContentItemId": "4swfdt4jyxm38wpp9ssjpmdrce",
+          "ContentItemVersionId": "4gefytbp7twqkw8jy5yqh3taws",
+          "ContentType": "AcademicStaffPage",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2020-12-26T16:35:09.8374228Z",
+          "PublishedUtc": "2020-12-26T17:46:19.1213525Z",
+          "CreatedUtc": "2020-12-26T16:14:25.6451566Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "AcademicStaffPage": {},
+          "AutoroutePart": {
+            "Path": "academicstaff",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "ListPart": {
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 100
+          }
+        },
+        {
+          "ContentItemId": "43tr97m4ma9z51bgqnzfzjyjck",
+          "ContentItemVersionId": "402hkg0qfqqeyygy2kbkt7xwc3",
+          "ContentType": "Menu",
+          "DisplayText": "Main Menu",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2020-12-27T19:10:32.9345447Z",
+          "PublishedUtc": "2020-12-27T19:10:32.9604746Z",
+          "CreatedUtc": "2020-12-23T08:22:53.3802502Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Main Menu"
+          },
+          "AliasPart": {
+            "Alias": "main-menu"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              {
+                "ContentItemId": "4f8d7hwve18g80menng2p8gqwb",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2020-12-23T08:23:10.6065287Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Name": "Home",
+                  "Url": "/"
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "47bjxycmkrfb8v73rxb553dk4g",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2020-12-23T08:23:30.1561633Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Name": "Academic",
+                  "Url": null
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "4g0vxxnqxk31e23aa3a69w8a4t",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2020-12-23T18:32:45.2210496Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Name": "Akademik kadro",
+                  "Url": "~/academicstaff"
+                },
+                "LinkMenuItem": {}
+              }
+            ]
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4kxjb65yv2z2yyan1fp4ktw8wb",
+          "ContentItemVersionId": "44tjk01m751bexcaxh4gv33453",
+          "ContentType": "ViewAllPage",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2021-01-07T18:38:29.5849527Z",
+          "PublishedUtc": "2021-01-07T18:38:29.6115086Z",
+          "CreatedUtc": "2021-01-07T18:32:56.6193907Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "ViewAllPage": {},
+          "AutoroutePart": {
+            "Path": "viewall",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "TitlePart": {
+            "Title": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "Menu",
+          "DisplayName": "Menu",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "AliasPartSettings": {
+                  "Pattern": "{{ ContentItem | display_text | slugify }}"
+                },
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "MenuPart",
+              "Name": "MenuPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "MenuItemsListPart",
+              "Name": "MenuItemsListPart",
+              "Settings": {}
+            }
+          ]
+        },
+        {
+          "Name": "LinkMenuItem",
+          "DisplayName": "Link Menu Item",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "MenuItem"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "LinkMenuItemPart",
+              "Name": "LinkMenuItemPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "LinkMenuItem",
+              "Name": "LinkMenuItem",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ContentMenuItem",
+          "DisplayName": "Content Menu Item",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Stereotype": "MenuItem"
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ContentMenuItemPart",
+              "Name": "ContentMenuItemPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "ContentMenuItem",
+              "Name": "ContentMenuItem",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "HomePage",
+          "DisplayName": "Home Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "HomePage",
+              "Name": "HomePage",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                },
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "ListPart",
+              "Name": "ListPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                },
+                "ListPartSettings": {
+                  "PageSize": 10,
+                  "ContainedContentTypes": [
+                    "Announcement",
+                    "News"
+                  ]
+                },
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "News",
+          "DisplayName": "News",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "News",
+              "Name": "News",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {},
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "MarkdownBodyPart",
+              "Name": "MarkdownBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2",
+                  "Editor": "Wysiwyg"
+                },
+                "MarkdownBodyPartSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Announcement",
+          "DisplayName": "Announcement",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Announcement",
+              "Name": "Announcement",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {},
+                "ContentIndexSettings": {}
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "MarkdownBodyPart",
+              "Name": "MarkdownBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2",
+                  "Editor": "Wysiwyg"
+                },
+                "MarkdownBodyPartSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ArticlePage",
+          "DisplayName": "Article Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ArticlePage",
+              "Name": "ArticlePage",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true
+                }
+              }
+            },
+            {
+              "PartName": "HtmlBodyPart",
+              "Name": "HtmlBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "LiquidPage",
+          "DisplayName": "Liquid Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "LiquidPage",
+              "Name": "LiquidPage",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true
+                }
+              }
+            },
+            {
+              "PartName": "LiquidPart",
+              "Name": "LiquidPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "AcademicStaff",
+          "DisplayName": "Academic Staff",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "AcademicStaff",
+              "Name": "AcademicStaff",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | container | display_text | slugify }}/{{ Model.ContentItem | display_text | slugify }}"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "AcademicStaffPage",
+          "DisplayName": "Academic Staff Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "AcademicStaffPage",
+              "Name": "AcademicStaffPage",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}"
+                }
+              }
+            },
+            {
+              "PartName": "ListPart",
+              "Name": "ListPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                },
+                "ListPartSettings": {
+                  "PageSize": 10,
+                  "ContainedContentTypes": [
+                    "AcademicStaff"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "CoursesPage",
+          "DisplayName": "Courses Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "CoursesPage",
+              "Name": "CoursesPage",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "BagPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Terms",
+                  "Description": "Provides a collection behavior for your content item.",
+                  "Position": "3"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "Term"
+                  ]
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Term",
+          "DisplayName": "Term",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Term",
+              "Name": "Term",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Courses",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Courses",
+                  "Description": "Collection for course item"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "Course"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Course",
+          "DisplayName": "Course",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Draftable": true,
+              "Versionable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Course",
+              "Name": "Course",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ViewAllPage",
+          "DisplayName": "View All Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": true,
+              "Draftable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {}
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ViewAllPage",
+              "Name": "ViewAllPage",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": [
+        {
+          "Name": "LiquidPart",
+          "Settings": {
+            "ContentPartSettings": {}
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "CommonPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides an editor for the common properties of a content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "AliasPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a way to define custom aliases for content items."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "AutoroutePart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a custom url for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "PreviewPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a way to define the url that is used to render your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "WidgetsListPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a way to add widgets per content items."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "FlowPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a customizable body for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "BagPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Reusable": true,
+              "Description": "Provides a collection behavior for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "HtmlBodyPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides an HTML Body for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "ListPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Add a list behavior."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "MarkdownBodyPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a Markdown formatted body for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "TitlePart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a Title for your content item.",
+              "DefaultPosition": "0"
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "MenuPart",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "MenuItemPart",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "LinkMenuItemPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "Description": "Provides a menu link behavior for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": []
+        },
+        {
+          "Name": "ContentMenuItemPart",
+          "Settings": {
+            "ContentPartSettings": {
+              "Attachable": true,
+              "DisplayName": "Content Menu Item",
+              "Description": "Provides a menu link behavior with the Content Picker for your content item."
+            }
+          },
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "ContentPickerField",
+              "Name": "SelectedContentItem",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Selected Content Item",
+                  "Position": "0"
+                },
+                "ContentPickerFieldSettings": {
+                  "Required": true,
+                  "DisplayAllContentTypes": true,
+                  "DisplayedContentTypes": []
+                },
+                "ContentIndexSettings": {}
+              }
+            }
+          ]
+        },
+        {
+          "Name": "HomePage",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "NumericField",
+              "Name": "StudentCount",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Student Count",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "NumericField",
+              "Name": "PersonalCount",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Personal Count",
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "FieldName": "NumericField",
+              "Name": "FacultyCount",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Faculty Count",
+                  "Position": "2"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "News",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image",
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Announcement",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image",
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "AcademicStaff",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Fullname",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Fullname",
+                  "Position": "0"
+                },
+                "TextFieldSettings": {
+                  "Required": true
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Faculty",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Faculty",
+                  "Position": "1"
+                },
+                "TextFieldSettings": {
+                  "Required": true
+                }
+              }
+            },
+            {
+              "FieldName": "MediaField",
+              "Name": "Image",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Image",
+                  "Position": "2"
+                },
+                "MediaFieldSettings": {
+                  "Required": true,
+                  "Multiple": false
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "LinkedinAccount",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Linkedin Account",
+                  "Editor": "Url",
+                  "Position": "6"
+                },
+                "TextFieldSettings": {}
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "FacebookAccount",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Facebook Account",
+                  "Editor": "Url",
+                  "Position": "7"
+                },
+                "TextFieldSettings": {
+                  "Hint": "Facebook Account"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "GithubAccount",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Github Account",
+                  "Editor": "Url",
+                  "Position": "8"
+                },
+                "TextFieldSettings": {}
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "TwitterAccount",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Twitter Account",
+                  "Editor": "Url",
+                  "Position": "9"
+                },
+                "TextFieldSettings": {}
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Email",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Email",
+                  "Editor": "Email",
+                  "Position": "10"
+                },
+                "TextFieldSettings": {
+                  "Required": true
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Phone",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Phone",
+                  "Editor": "Tel",
+                  "Position": "11"
+                },
+                "TextFieldSettings": {
+                  "Required": true
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Address",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Address",
+                  "Position": "12"
+                },
+                "TextFieldSettings": {}
+              }
+            },
+            {
+              "FieldName": "HtmlField",
+              "Name": "Courses",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Courses",
+                  "Position": "4"
+                }
+              }
+            },
+            {
+              "FieldName": "HtmlField",
+              "Name": "About",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "About",
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "FieldName": "HtmlField",
+              "Name": "Thesis",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Thesis",
+                  "Position": "5"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Course",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "NumericField",
+              "Name": "Akts",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Akts",
+                  "Position": "0"
+                },
+                "NumericFieldSettings": {
+                  "Required": true,
+                  "Minimum": 2.0,
+                  "Maximum": 10.0
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Code",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Code",
+                  "Position": "1"
+                },
+                "TextFieldSettings": {
+                  "Required": true
+                }
+              }
+            },
+            {
+              "FieldName": "HtmlField",
+              "Name": "ProgramOutcomes",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Program Outcomes",
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "FieldName": "HtmlField",
+              "Name": "LearningOutcomes",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Learning Outcomes",
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "FieldName": "HtmlField",
+              "Name": "Topics",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Topics",
+                  "Position": "4"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Queries",
+      "Queries": [
+        {
+          "Template": "SELECT Content FROM ContentItemIndex,Document\r\nWHERE Published=true AND ContentType = '{{ ContentType }}' AND Document.Id=DocumentId\r\nORDER BY PublishedUtc DESC\r\nLIMIT '{{ size }}'",
+          "ReturnDocuments": false,
+          "Name": "GetContentItemsByType",
+          "Source": "Sql",
+          "Schema": null
+        },
+        {
+          "Template": "SELECT * FROM ContentItemIndex,Document\r\nWHERE ContentType='AcademicStaff' AND\r\nDocument.Id=DocumentId AND Published=true",
+          "ReturnDocuments": false,
+          "Name": "GetAllAcademicStaff",
+          "Source": "Sql",
+          "Schema": null
+        },
+        {
+          "Template": "SELECT Content FROM ContentItemIndex,Document\r\nWHERE Published=true AND (ContentType = 'News' OR ContentType = 'Announcement') AND Document.Id=DocumentId\r\nORDER BY PublishedUtc DESC\r\nLIMIT 4",
+          "ReturnDocuments": false,
+          "Name": "GetItemsForSlider",
+          "Source": "Sql",
+          "Schema": null
+        },
+        {
+          "Template": "SELECT Content FROM ContentItemIndex,Document\r\nWHERE Published=true AND ContentType = '{{ ContentType }}' AND \r\nDocument.Id=DocumentId\r\nORDER BY PublishedUtc DESC\r\nLIMIT '{{ size }}' OFFSET '{{ from }}'",
+          "ReturnDocuments": false,
+          "Name": "GetContentItemsByTypeFromTo",
+          "Source": "Sql",
+          "Schema": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+﻿<div id="colorlib-blog">
+  <div class="container">
+    <div class="row">
+      {% assign AllAcademicStaff = Queries.GetAllAcademicStaff | query %}
+      {% for academicStaff in AllAcademicStaff %}
+      {% assign jsonObj = academicStaff.Content | jsonparse %}
+      <div class="col-lg-4 col-md-4">
+        <div class="colorlib-blog animate-box">
+          <a href="{{ jsonObj.AutoroutePart.Path }}">{{ jsonObj.AcademicStaff.Image.Paths[0] | asset_url | img_tag: class:'img-responsive' , style:'height:400px'}}</a>
+          <div class="blog-text">
+            <h3>
+              <a href="#">{{jsonObj.AcademicStaff.Fullname.Text}}</a>
+            </h3>
+            <p class="meta">
+              <span>{{jsonObj.AcademicStaff.Faculty.Text}}</span>
+            </p>
+            <a href="{{ jsonObj.AutoroutePart.Path }}" class="btn btn-primary">
+              Daha Fazla <i class="icon-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+

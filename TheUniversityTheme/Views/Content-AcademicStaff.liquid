@@ -1,0 +1,73 @@
+﻿<div id="colorlib-about" style="padding-top:5px">
+		<div class="container">
+      <div class="row">
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-bottom:15px">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Hakkinda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="courses-tab" data-toggle="tab" href="#courses" role="tab" aria-controls="courses" aria-selected="false">Dersler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="thesis-tab" data-toggle="tab" href="#thesis" role="tab" aria-controls="thesis" aria-selected="false">Yonetilen Tezler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Iletisim</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab">
+           
+			      	<div class="col-md-12 col-sm-12 text-center animate-box" data-animate-effect="fadeIn">
+			      		<div class="colorlib-staff">
+			      			{{ Model.ContentItem.Content.AcademicStaff.Image.Paths.first | asset_url | img_tag: style:'width:230px;height:280px;'}}
+			      			<h3>{{Model.ContentItem.Content.AcademicStaff.Fullname.Text}}</h3>
+			      			<strong class="role">{{Model.ContentItem.Content.AcademicStaff.Faculty.Text}}</strong>
+			      			<p>{{Model.ContentItem.Content.AcademicStaff.About.Html | raw}}</p>
+			      			<ul class="colorlib-social-icons">
+			      				<li><a href="{{Model.ContentItem.Content.AcademicStaff.FacebookAccount.Text}}"><i class="icon-facebook"></i></a></li>
+			      				<li><a href="{{Model.ContentItem.Content.AcademicStaff.TwitterAccount.Text}}"><i class="icon-twitter"></i></a></li>
+			      				<li><a href="{{Model.ContentItem.Content.AcademicStaff.LinkedinAccount.Text}}"><i class="icon-linkedin"></i></a></li>
+			      				<li><a href="{{Model.ContentItem.Content.AcademicStaff.GithubAccount.Text}}"><i class="icon-github"></i></a></li>
+			      			</ul>
+			      		</div>
+			       
+			      </div>
+                   
+          </div>
+          <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+            <p>{{Model.ContentItem.Content.AcademicStaff.Courses.Html | raw}}</p>
+          </div>
+          <div class="tab-pane fade" id="thesis" role="tabpanel" aria-labelledby="thesis-tab">
+            <p>{{Model.ContentItem.Content.AcademicStaff.Thesis.Html | raw}}</p>
+          </div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="col-md-12 animate-box">
+
+              <div class="colorlib-contact-info">
+                <h3>Contact Information</h3>
+                <ul>
+                  <li class="address">
+                    {% if Model.ContentItem.Content.AcademicStaff.Address.Text %}
+                    {{Model.ContentItem.Content.AcademicStaff.Address.Text}}
+                    {% else %}
+                    <h4>Hazirlanacak</h4>
+                    {% endif %}
+                  </li>
+                  <li class="phone">
+                    {{Model.ContentItem.Content.AcademicStaff.Phone.Text}}
+                  </li>
+                  <li class="email">
+                    <a href="mailto:{{Model.ContentItem.Content.AcademicStaff.Email.Text}}">{{Model.ContentItem.Content.AcademicStaff.Email.Text}}</a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
+
+

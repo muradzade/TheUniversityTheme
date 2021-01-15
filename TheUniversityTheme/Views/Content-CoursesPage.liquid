@@ -1,0 +1,68 @@
+﻿{% if Model.ContentItem.Content.BagPart.ContentItems.size > 0 %}
+  <div class="container">
+  	<h1>{{Model.ContentItem.Content.TitlePart.Title}}</h1>
+  	<div class="row">
+  		{% for term in Model.ContentItem.Content.BagPart.ContentItems %}
+  		<div class="col-lg-6 col-md-6">
+  			<div id="colorlib-content">
+  				<div class="choose animate-box">
+  					<div class="">
+  						<h2>{{term.TitlePart.Title}}</h2>
+  					</div>
+  					{% for course in term.Courses.ContentItems %}
+  					<div class="progress">
+  						<div data-target="#modal-{{ course.Course.Code.Text }}" data-toggle="modal" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+  							{{course.Course.Code.Text}} | {{course.TitlePart.Title}} | {{course.Course.Akts.Value}}
+  						</div>
+  					</div>
+  					{% endfor %}
+  				</div>
+  			</div>
+  		</div>
+  		{% endfor %}
+  	</div>
+  </div>
+  
+  {% for term in Model.ContentItem.Content.BagPart.ContentItems %}
+    {% for course in term.Courses.ContentItems %}
+      <div class="modal fade" id="modal-{{course.Course.Code.Text }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">{{course.TitlePart.Title}}</h5>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ogrenim ciktilari</td>
+                  <td>{{course.Course.LearningOutcomes.Html}}</td>
+                </tr>
+                <tr>
+                  <td>Program ciktilari</td>
+                  <td>{{course.Course.ProgramOutcomes.Html}}</td>
+                </tr>
+                <tr>
+                  <td>Konu basliklari</td>
+                  <td>{{course.Course.Topics.Html}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    {% endfor %}
+  {% endfor %}
+
+{% endif %}
